@@ -16,11 +16,8 @@ endif
 set background=dark
 
 " Persistent undos
-try
-  set undodir=~/.vim/undos
-  set undofile
-catch
-endtry
+set undodir=~/.vim/undos
+set undofile
 
 " Better auto-completions for commands
 set wildmenu
@@ -31,7 +28,10 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 let mapleader = ','
 
-" Convenient shortcuts for tabs
+" Convenient shortcuts for buffers & tabs
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <silent>   <TAB>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap <silent> <S-TAB>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
 noremap <Leader>3 3gt
@@ -51,19 +51,26 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'nanotech/jellybeans.vim'	" Colorscheme
-Plug 'tpope/vim-fugitive'	" Git extensions
-"Plug 'thaerkh/vim-workspace'	" Workspaces
-Plug 'preservim/nerdtree'	" File explorer
-Plug 'ctrlpvim/ctrlp.vim'	" File finder
-Plug 'mhinz/vim-startify'	" Start screen
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim'		" Colorscheme
+Plug 'tpope/vim-fugitive'		" Git extensions
+Plug 'preservim/nerdtree'		" File explorer
+Plug 'ctrlpvim/ctrlp.vim'		" File finder
+Plug 'mhinz/vim-startify'		" Start screen
+Plug 'vim-airline/vim-airline'		" Cute statusline
+Plug 'vim-airline/vim-airline-themes'	" Themes for statusline
 
-" This one has to be the last one
-Plug 'ryanoasis/vim-devicons'
+" This plugin has to be the last one
+Plug 'ryanoasis/vim-devicons'		" Cute icons
 call plug#end()
 
+" List bookmarks and sessions first
+let g:startify_lists = [
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
 colorscheme jellybeans
 
 set laststatus=2
@@ -72,13 +79,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
-" Somehow those VCS checks break the statusline
+" Somehow those VCS checks break the statusline, disable
 let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
-
-" Make CtrlP open in a new tab by default
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<C-t>'],
-    \ 'AcceptSelection("t")': ['<CR>', '<2-LeftMouse>'],
-    \ }
 
 nnoremap <Leader>f :NERDTreeToggle<Enter>
