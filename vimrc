@@ -1,6 +1,7 @@
 set nocompatible
 set encoding=UTF-8
 set modeline
+set hlsearch
 
 if !has('gui_running')
   set t_Co=256
