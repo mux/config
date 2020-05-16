@@ -1,9 +1,6 @@
 set nocompatible
-set modeline
-set hlsearch
 set encoding=UTF-8
-filetype indent plugin on
-syntax on
+set modeline
 
 if !has('gui_running')
   set t_Co=256
@@ -20,7 +17,6 @@ set undodir=~/.vim/undos
 set undofile
 
 " Better auto-completions for commands
-set wildmenu
 set wildmode=longest:full,full
 
 " Bug work-around
@@ -52,7 +48,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'nanotech/jellybeans.vim'		" Colorscheme
+Plug 'tpope/vim-sensible'		" Good default settings
+Plug 'tpope/vim-repeat'			" Better .
 Plug 'tpope/vim-fugitive'		" Git extensions
+Plug 'tpope/vim-unimpaired'		" Useful commands
+Plug 'tpope/vim-surround'		" Quoting etc
 Plug 'preservim/nerdtree'		" File explorer
 Plug 'ctrlpvim/ctrlp.vim'		" File finder
 Plug 'mhinz/vim-startify'		" Start screen
@@ -71,9 +71,9 @@ let g:startify_lists = [
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ { 'type': 'commands',  'header': ['   Commands']       },
       \ ]
+let g:startify_session_persistence = 1
 colorscheme jellybeans
 
-set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
