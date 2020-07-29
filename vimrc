@@ -1,4 +1,3 @@
-set nocompatible
 set encoding=UTF-8
 set modeline
 set hlsearch
@@ -84,4 +83,4 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 " Somehow those VCS checks break the statusline, disable
 let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
 
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>
