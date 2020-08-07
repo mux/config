@@ -78,7 +78,5 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
-" Somehow those VCS checks break the statusline, disable
-let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
 
 nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>
