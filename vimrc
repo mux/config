@@ -70,6 +70,7 @@ let g:startify_lists = [
       \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
       \ { 'type': 'commands',  'header': ['   Commands']       },
       \ ]
+let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 colorscheme jellybeans
 
