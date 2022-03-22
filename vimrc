@@ -72,7 +72,6 @@ let g:startify_lists = [
       \ ]
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
-colorscheme jellybeans
 
 set noshowmode
 let g:airline_powerline_fonts = 1
@@ -82,4 +81,9 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 " The following checks break rendering for me
 let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
 
+" Always follow symlinks
+let g:ctrlp_follow_symlinks = 2
+
 nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>
+
+colorscheme jellybeans
