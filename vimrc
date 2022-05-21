@@ -1,14 +1,8 @@
-set encoding=UTF-8
+set nocompatible
+set encoding=utf-8
 set modeline
 set hlsearch
-
-if !has('gui_running')
-  set t_Co=256
-endif
-
-if has('termguicolors')
-  set termguicolors
-endif
+set autoread
 
 " Persistent undos
 set undodir=~/.vim/undos
@@ -49,7 +43,7 @@ Plug 'nanotech/jellybeans.vim'		" Colorscheme
 Plug 'tpope/vim-sensible'		" Good default settings
 Plug 'tpope/vim-repeat'			" Better .
 Plug 'tpope/vim-commentary'		" Comment with gc
-Plug 'tpope/vim-fugitive'		" Git extensions
+"Plug 'tpope/vim-fugitive'		" Git extensions
 Plug 'tpope/vim-unimpaired'		" Useful commands
 Plug 'tpope/vim-surround'		" Quoting etc
 Plug 'preservim/nerdtree'		" File explorer
@@ -73,7 +67,6 @@ let g:startify_lists = [
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
 
-set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
@@ -85,5 +78,8 @@ let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
 let g:ctrlp_follow_symlinks = 2
 
 nnoremap <silent> <Leader>f :NERDTreeToggle<Enter>
+
+set noshowmode
+set laststatus=2
 
 colorscheme jellybeans
