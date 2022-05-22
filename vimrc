@@ -43,7 +43,7 @@ Plug 'nanotech/jellybeans.vim'		" Colorscheme
 Plug 'tpope/vim-sensible'		" Good default settings
 Plug 'tpope/vim-repeat'			" Better .
 Plug 'tpope/vim-commentary'		" Comment with gc
-"Plug 'tpope/vim-fugitive'		" Git extensions
+Plug 'tpope/vim-fugitive'		" Git extensions
 Plug 'tpope/vim-unimpaired'		" Useful commands
 Plug 'tpope/vim-surround'		" Quoting etc
 Plug 'preservim/nerdtree'		" File explorer
