@@ -71,8 +71,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
-" The following checks break rendering for me
-let g:airline#extensions#branch#vcs_checks = [] " ['untracked', 'dirty']
+" I find that the 'untracked' and 'dirty' checks look weird stuck to the
+" branch name without spacing, and they don't show immediately but only after
+" you move in the file or use a command, which feels buggy.
+let g:airline#extensions#branch#vcs_checks = []
 
 " Always follow symlinks
 let g:ctrlp_follow_symlinks = 2
