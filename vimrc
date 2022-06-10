@@ -17,9 +17,10 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 let mapleader = ','
 
 " Convenient shortcuts for buffers & tabs
+set hidden
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
-nnoremap <silent>   <TAB>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap <silent> <S-TAB>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+nnoremap <silent>   <TAB>  :bnext<CR>
+nnoremap <silent> <S-TAB>  :bprevious<CR>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
 noremap <Leader>3 3gt
