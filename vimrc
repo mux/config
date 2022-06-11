@@ -86,3 +86,7 @@ set noshowmode
 set laststatus=2
 
 colorscheme jellybeans
+
+" Works around an obscure vim terminal handling bug that results
+" in a strange ^[[?12;4$y escape sequence being printed.
+set t_RV=
