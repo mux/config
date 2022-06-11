@@ -71,7 +71,7 @@ let g:startify_session_persistence = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
 " I find that the 'untracked' and 'dirty' checks look weird stuck to the
 " branch name without spacing, and they don't show immediately but only after
 " you move in the file or use a command, which feels buggy.
