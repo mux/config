@@ -73,6 +73,7 @@ let g:startify_lists = [
       \ ]
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_persistence = 1
+let g:startify_session_sort = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
