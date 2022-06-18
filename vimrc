@@ -58,6 +58,7 @@ Plug 'ctrlpvim/ctrlp.vim'		" File finder
 Plug 'mhinz/vim-startify'		" Start screen
 Plug 'vim-airline/vim-airline'		" Cute statusline
 Plug 'vim-airline/vim-airline-themes'	" Themes for statusline
+Plug 'bfrg/vim-cpp-modern'		" Modern C/C++ syntax highlighting
 
 " This plugin has to be the last one
 Plug 'ryanoasis/vim-devicons'		" Cute icons
