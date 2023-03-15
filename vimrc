@@ -11,6 +11,17 @@ set undofile
 " Better auto-completions for commands
 set wildmode=longest:full,full
 
+" Good defaults for working with the mouse
+set mouse=a
+set ttymouse=sgr
+" Some customizations for :term
+set termwinsize=10x0
+set splitbelow
+augroup termIgnore
+  autocmd!
+  autocmd TerminalOpen * set nobuflisted
+augroup END
+
 " Bug work-around
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
