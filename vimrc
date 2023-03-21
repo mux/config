@@ -22,9 +22,6 @@ augroup termIgnore
   autocmd TerminalOpen * set nobuflisted
 augroup END
 
-" Bug work-around
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-
 " Automatically jump back to the last position in a file
 autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
