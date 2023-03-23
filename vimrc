@@ -12,7 +12,6 @@ set undofile
 set wildmode=longest:full,full
 
 " Good defaults for working with the mouse
-set mouse=a
 set ttymouse=sgr
 " Some customizations for :term
 set termwinsize=10x0
